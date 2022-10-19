@@ -11,7 +11,6 @@ You will push on your Git repository:
 
  * the code
  * a screenshot of your kanban
- * your unit tests 
 
 ## Features 
 
