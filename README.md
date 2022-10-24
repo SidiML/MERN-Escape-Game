@@ -14,7 +14,7 @@ You will push on your Git repository:
 
 ## Features 
 
-   All the first features are listed in the technical documentation: [Document_technique-V2.0-24102022.pdf](https://github.com/Matrice-io/MERN-Escape-Game/Document_technique-V2.0-24102022.png)
+   All the first features are listed in the technical documentation: [Document_technique-V2.0-24102022.pdf](https://github.com/Matrice-io/MERN-Escape-Game/blob/main/Document_technique-V2.0-24102022.png)
   
 ## List of tickets (version alpha)
 
