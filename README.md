@@ -4,13 +4,14 @@ In this project, you will implement a booking platform for escape game. What is 
 
 The client give you the technical documentation and a list of tickets below.
 
-Your team have only 7 days so the client's request is too ambitious, so you will have to use agility to do the maximum without wasting time.
+Your team have only a few days. The client's request may be too ambitious so you will have to use agility to do the maximum without wasting time.
 We strongly recommend the use of a kanban.
 
 You will push on your Git repository:
 
  * the code
  * a screenshot of your kanban
+ * a README.md file with the info to access the data in MongoDB Atlas and the 'getting started' section
 
 ## Features 
 

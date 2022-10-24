@@ -1,4 +1,4 @@
-# Document technique - V 1.0 - 29 juin 2022
+# Document technique - V 1.0 - 24 octobre 2022
 
 # Présentation générale du projet
 
