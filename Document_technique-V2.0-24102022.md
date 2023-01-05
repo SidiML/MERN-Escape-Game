@@ -1,4 +1,4 @@
-# Document technique - V 1.0 - 24 octobre 2022
+# Document technique - 5 janvier 2023
 
 # Présentation générale du projet
 
@@ -66,7 +66,7 @@ Un utilisateur connecté a accès à l'historique de ses réservations (passées
 
 Lorsqu'un utilisateur veut réserver un créneau, il a accès à une page où il choisit le nombre de participants et entre les informations des participants.
 
- Le créneau ainsi réservé devient indisponible aux autres utilisateurs. Il est affiché dans l'espace de gestion des réservations de l'utilisateur ayant fait la réservation.
+Le créneau ainsi réservé devient indisponible aux autres utilisateurs. Il est affiché dans l'espace de gestion des réservations de l'utilisateur ayant fait la réservation.
 
  NB: un utilisateur doit avoir 18 ans minimum au moment de la réservation.
 
