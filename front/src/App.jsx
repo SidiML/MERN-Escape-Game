@@ -3,7 +3,7 @@ import { useState } from "react";
 
 // *pages
 import "./App.css";
-import AppHeader from "./components/appHeader";
+import AppHeader from "./components/AppHeader";
 
 class App extends Component {
   render() {
