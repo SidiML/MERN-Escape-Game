@@ -1,26 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
+
 import "../styles/AppHeader.css"
 import logoEscapeGame from "../media/images/logo-esc.png"
 
+
 const AppHeader = () => {
+    const [userConnect, setUserConnect] = useState(false)
+
     return (
         <header>
-           <section>
-            <div className='applogo'>
-                <img src={logoEscapeGame} alt="" style={{width:"100px",}}/>
-            </div>
+            <section>
+                <div className='AppLogo'>
+                    <img src={logoEscapeGame} style={{width:"100px"}} alt="logo EscapeGame"/>
+                </div>
                 
             </section>
             <section>
-                <div>
-                    <p>Bonjour</p>
+                <div className=''>
+                    {userConnect && <p>Bonjour</p>}
                 </div>
             </section>
             <section>
                 <div>
-                    <a>Historique</a>
+                    <a style={{marginRight: '10px', color: 'red'}}>Historique</a>
 
-                    <a>Connexion</a>
+                    <a style={{color:'white'}}>Connexion</a>
                 </div>
             </section>
         </header>

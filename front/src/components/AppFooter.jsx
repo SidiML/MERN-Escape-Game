@@ -1,10 +1,15 @@
 import React from 'react';
-// import "../styles/AppFooter.css"
+
+import "../styles/AppFooter.css"
+import logoEscapeGame from "../media/images/logo-esc.png"
+
 const AppFooter = () => {
     return (
         <footer>
            <section>
-                <div><img src="" alt="" />X</div>
+                <div>
+                <img src={logoEscapeGame} style={{width:"100px"}} alt="logo EscapeGame"/>
+                </div>
                 <div>
                     <a href="">Home</a>|
                     <a href="">Blog</a>|
