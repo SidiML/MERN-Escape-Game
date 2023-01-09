@@ -14,8 +14,8 @@ header section{
 
 header section:last-child{
     position: absolute;
-    right: 5%;
-    top: 4%;
+    right: 5px;
+    top: 15px;
     text-transform: uppercase;
 }
 
