@@ -16,17 +16,17 @@ import Historique from './pages/Historique.jsx'
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 root.render(
-  //<React.StrictMode>
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/Connexion" element={<Connexion />}></Route>
-      <Route path="/Inscription" element={<Inscription />}></Route>
-      <Route path="/Home" element={<Home />}></Route>
-      <Route path="/Reservation" element={<Reservation />}></Route>
-      <Route path="/Booking" element={<Booking />}></Route>
-      <Route path="/Historique" element={<Historique />}></Route>
-    </Routes>
-  </BrowserRouter>
-  //</React.StrictMode>
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/Connexion" element={<Connexion />} />
+        <Route path="/Inscription" element={<Inscription />} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/Reservation" element={<Reservation />} />
+        <Route path="/Booking" element={<Booking />} />
+        <Route path="/Historique" element={<Historique />} />
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
 );

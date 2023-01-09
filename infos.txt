@@ -1,0 +1,12 @@
+[Source]
+- https://www.crazygames.fr/
+- https://crack-the-egg.com/
+
+[Questions au client]
+L'architecture: separer back et front.
+Est ce qu'on a besion de plusieurs profil de joueurs.
+Des regles specifiques par rapport au nom et prenom.
+Est ce que la page d'acceuil c'est la page de connexion.
+Est ce que la limitation d'age est une image.
+Est ce qu'on peut etre inscrit et non connecté.
+Est ce l'utilisateur reçoit une demande de validation de son compte?
