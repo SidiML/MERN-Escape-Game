@@ -7,8 +7,8 @@ const AppFooter = () => {
     return (
         <footer>
            <section>
-                <div>
-                <img src={logoEscapeGame} style={{width:"100px"}} alt="logo EscapeGame"/>
+                <div className='AppLogo'>
+                    <a href="/"><img src={logoEscapeGame} style={{width:"100px"}} alt="logo EscapeGame"/></a>
                 </div>
                 <div>
                     <a href="">Home</a>|
