@@ -1,16 +1,23 @@
 header{
     display: fixed;
     background-color: blueviolet;
-    width :900px;
-    height: 50px;
+    width :100%;
+    height: 12%;
 }
 /* section */
-section{
+header section{
 display: inline-block;
 
 }
 
-
+header section:last-child{
+    position: absolute;
+    right: 5%;
+    top: 4%;
+    text-transform: uppercase;
+    
+    }
+    
 .applogo{
-    margin-left: -30%;
+    margin-left: 20%;
 }
