@@ -9,7 +9,10 @@ import AppFooter from "../components/AppFooter";
 function Home () {
     return (
         <section>
-           <h1>Home</h1> 
+            <AppHeader/>
+            <h1>Connexion</h1>
+            <AppMain/>
+            <AppFooter/>
         </section>
     );
 }
