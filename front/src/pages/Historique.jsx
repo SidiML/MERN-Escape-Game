@@ -9,10 +9,10 @@ import AppFooter from "../components/AppFooter";
 function Historique ()  {
     return (
         <section>
-            <AppHeader />
+            <AppHeader/>
             <h1>Historique</h1>
-            <AppMain />
-            <AppFooter />
+            <AppMain/>
+            <AppFooter/>
         </section>
     );
 }

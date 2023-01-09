@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-
 import "../styles/AppHeader.css"
 import logoEscapeGame from "../media/images/logo-esc.png"
 
@@ -11,7 +10,9 @@ const AppHeader = () => {
         <header>
             <section>
                 <div className='AppLogo'>
+                   <a href='/'>
                     <img src={logoEscapeGame} style={{width:"100px"}} alt="logo EscapeGame"/>
+                    </a> 
                 </div>
                 
             </section>
@@ -22,9 +23,9 @@ const AppHeader = () => {
             </section>
             <section>
                 <div>
-                    <a style={{marginRight: '10px', color: 'red'}}>Historique</a>
+                    <a href='/Historique' style={{marginRight: '10px', color: 'red'}}>Historique</a>
 
-                    <a style={{color:'white'}}>Connexion</a>
+                    <a href='/Connexion' style={{color:'white'}}>Connexion</a>
                 </div>
             </section>
         </header>

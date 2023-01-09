@@ -9,11 +9,11 @@ import AppFooter from "../components/AppFooter";
 function Reservation() {
   return (
     <section>
-      <AppHeader />
-      <h1>Reservation</h1>
-      <AppMain />
-      <AppFooter />
-    </section>
+            <AppHeader/>
+            <h1>Reservation</h1>
+            <AppMain/>
+            <AppFooter/>
+        </section>
   );
 }
 
