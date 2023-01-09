@@ -9,10 +9,10 @@ import AppFooter from "../components/AppFooter";
 function Inscription () {
     return (
         <section>
-            <AppHeader/>
+            <AppHeader />
             <h1>Inscription</h1>
-            <AppMain/>
-            <AppFooter/>
+            <AppMain />
+            <AppFooter />
         </section>
     );
 }

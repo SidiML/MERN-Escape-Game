@@ -1,6 +1,5 @@
 import React from "react";
 
-
 // *pages
 import "../styles/App.css";
 import AppHeader from "../components/AppHeader";
@@ -10,10 +9,10 @@ import AppFooter from "../components/AppFooter";
 function Booking () {
   return (
     <section>
-      <AppHeader/>
+      <AppHeader />
       <h1>Booking</h1>
-      <AppMain/>
-      <AppFooter/>
+      <AppMain />
+      <AppFooter />
     </section>
   );
 };

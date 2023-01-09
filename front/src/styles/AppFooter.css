@@ -11,3 +11,7 @@ footer section{
 footer div{
     display: inline-block;
 }
+
+footer .AppLogo{
+    margin-left: 2%;
+}
