@@ -1,8 +1,8 @@
 import React from 'react';
-import "../styles/AppHeader.css"
-const AppHeader = () => {
+import "../styles/AppMain.css"
+const AppMain = () => {
     return (
-        <header>
+        <main>
            <section>
                 <div><img src="" alt="" />X</div>
             </section>
@@ -18,8 +18,8 @@ const AppHeader = () => {
                     <a>Connexion</a>
                 </div>
             </section>
-        </header>
+        </main>
     );
 }
 
-export default AppHeader;
+export default AppMain;
