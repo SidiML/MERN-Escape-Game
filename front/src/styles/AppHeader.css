@@ -1,0 +1,16 @@
+header{
+    display: fixed;
+    background-color: blueviolet;
+    width :900px;
+    height: 50px;
+}
+/* section */
+section{
+display: inline-block;
+
+}
+
+
+.applogo{
+    margin-left: -30%;
+}
