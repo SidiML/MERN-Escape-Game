@@ -12,8 +12,15 @@ class App extends Component {
     return (
       <>
         <AppHeader />
-        <h1>App</h1>
-        <MediaCard />
+        <h1>Bienvenue sur le site de résa Escape Room</h1>
+        <ul>
+          <MediaCard />
+          <MediaCard />
+          <MediaCard />
+          <MediaCard />
+          <MediaCard />
+          <MediaCard />
+        </ul>
         <AppMain />
         <AppFooter />
       </>
@@ -30,7 +37,7 @@ import Typography from '@mui/material/Typography';
 
 export function MediaCard() {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ display: 'inline-block', maxWidth: 345 }}>
       <CardMedia
         sx={{ height: 140 }}
         image="/static/images/cards/contemplative-reptile.jpg"

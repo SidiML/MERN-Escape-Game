@@ -18,17 +18,28 @@ const AppFooter = () => {
                     <a href="">Faq</a>|
                     <a href="">Contact</a>
                 </div>
+            </section>
+
+            <section>
                 <div>
-                    <p>55, rue ...</p>
-                    <p>55, rue ...</p>
-                    <p>55, rue ...</p>
-                    <p>55, rue ...</p>
+                    <p>55, rue du Faubourg Sain-Honoré</p>
+                    <p>75008, Paris</p>
+                    <p>+33 1 42 92 81 00</p>
+                    <p>contact@escape-game.com</p>
                 </div>
+                <div>
+                    <p>Copyright ® SYL & SYL 2022. </p>
+                </div>
+            </section>
+            <section>
                 <div>
                     <a>A propos</a>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora porro incidunt maiores molestiae tenetur distinctio voluptatem, optio vero. Dicta soluta praesentium optio reiciendis modi veritatis nostrum ad quod magnam explicabo!
                     </p>
+                </div>
+                <div>
+                    
                 </div>
             </section>
         </footer>
