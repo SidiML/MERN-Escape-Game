@@ -5,11 +5,11 @@ footer{
 }
 
 footer section{
-    /* display: inline-block; */
+    display: flex;
 }
 
 footer div{
-    display: inline-block;
+    /* display: flex; */
 }
 
 footer .AppLogo{
