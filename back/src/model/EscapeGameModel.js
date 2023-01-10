@@ -9,7 +9,7 @@ const EscapeGameSchema = mongoose.Schema({
     price:Number,
     minplayers:Number
 
-}, {collection: "EscapeGame"}) //, {versionKey: true})
+}, {collection: "rooms"}) //, {versionKey: true})
 
 const EscapeGameModel = mongoose.model('MyEscapeGame', EscapeGameSchema)
 EscapeGameModel.createCollection()
