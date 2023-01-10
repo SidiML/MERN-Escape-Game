@@ -67,8 +67,14 @@ function SignUp() {
         datenaissance : datenaissance,
         password: password
       });
-
-
+//fetch("localhost:5000/users") 
+    const Users = {
+    prenom: prenom,
+    nom : nom,
+    email : email,
+    datenaissance : datenaissance,
+    password: password
+    };
    
   };
 
