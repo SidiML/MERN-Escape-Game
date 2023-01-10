@@ -17,7 +17,7 @@ router.get("/", (requête, réponse) => {
 })
 
 // //? Categorie (CRUD)
-// router.post("/Categories", CategorieController.createCategories)
+router.post("/Users", EscapeGameController.createUsers)
 // router.post("/Categorie", CategorieController.createCategorie)
 // router.get("/Categories", CategorieController.getCategories)
 // router.get("/Categorie/:name", CategorieController.getCategorieByName)

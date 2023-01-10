@@ -14,7 +14,7 @@ class App extends Component {
         <AppHeader />
         <h1>Bienvenue sur le site de résa Escape Room</h1>
         <ul>
-          <MediaCard />
+          <MediaCard sx={{ marginLeft: "5%" }} />
           <MediaCard />
           <MediaCard />
           <MediaCard />
@@ -40,7 +40,8 @@ export function MediaCard() {
     <Card sx={{ display: 'inline-block', maxWidth: 345 }}>
       <CardMedia
         sx={{ height: 140 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
+        image="https://picsum.photos/200/100"
+        // image="/static/images/cards/contemplative-reptile.jpg"
         title="green iguana"
       />
       <CardContent>
