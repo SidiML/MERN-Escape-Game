@@ -4,10 +4,10 @@
 
 [Questions au client]
 L'architecture: separer back et front.
-Est ce qu'on a besion de plusieurs profil de joueurs. un seul utilisateur
+Est ce qu'on a besion de plusieurs profil de joueurs  un seul utilisateur
 Des regles specifiques par rapport au nom et prenom.
 Est ce que la page d'acceuil c'est la page de connexion.
-Est ce que la limitation d'age est une image, ou une condition acces ou de refus de reservation?
+Est ce que la limitation d'age est une image.ou une condition acces ou de refus de reservation?
 Est ce qu'on peut etre inscrit et non connecté.
 Est ce l'utilisateur reçoit une demande de validation de son compte?
 Est ce qu'il faut avoir la meme base d'image(salle)?
