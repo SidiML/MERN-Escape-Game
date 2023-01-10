@@ -22,7 +22,7 @@ const AppFooter = () => {
 
             <section>
                 <div>
-                    <p>55, rue du Faubourg Sain-Honoré</p>
+                    <p>55, rue du Faubourg Saint-Honoré</p>
                     <p>75008, Paris</p>
                     <p>+33 1 42 92 81 00</p>
                     <p>contact@escape-game.com</p>
