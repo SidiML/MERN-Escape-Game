@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import "../styles/AppHeader.css"
-import logoEscapeGame from "../media/images/logo-esc.png"
+import logoEscapeGame from "../media/images/Logo_EscapeGame.png"
 
 
 const AppHeader = () => {

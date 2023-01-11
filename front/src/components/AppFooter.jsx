@@ -1,7 +1,7 @@
 import React from 'react';
 
 import "../styles/AppFooter.css"
-import logoEscapeGame from "../media/images/logo-esc.png"
+import logoEscapeGame from "../media/images/Logo_EscapeGame.png"
 
 const AppFooter = () => {
     return (
@@ -39,7 +39,7 @@ const AppFooter = () => {
                     </p>
                 </div>
                 <div>
-                    
+
                 </div>
             </section>
         </footer>

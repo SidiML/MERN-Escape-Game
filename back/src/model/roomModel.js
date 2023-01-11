@@ -11,7 +11,7 @@ const RoomSchema = mongoose.Schema({
 
 }, {collection: "rooms"}) //, {versionKey: true})
 
-const RoomModel = mongoose.model('MyRoomSchema', RoomSchema)
-RoomModel.createCollection()
+const RoomModel = mongoose.model('RoomModel', RoomSchema)
+// RoomModel.createCollection()
 
 module.exports = {RoomModel}

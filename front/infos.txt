@@ -1,11 +1,17 @@
+[Recherche]
+- Google https://www.google.com/search?client=firefox-b-d&q=pegi+rating+system
+
 [Source]
 - https://www.crazygames.fr/
 - https://crack-the-egg.com/
+- https://www.saferinternetday.org/fr/supporters/pegi
 
 [Documentation]
+- https://mongoosejs.com/docs/tutorials/dates.html
 - https://stackoverflow.com/questions/18022365/mongoose-validate-email-syntax
 
-[Questions au client]
+[Conception]
+- Questions au client
 L'architecture: separer back et front.
 Est ce qu'on a besion de plusieurs profil de joueurs  un seul utilisateur
 Des regles specifiques par rapport au nom et prenom.
@@ -16,3 +22,27 @@ Est ce l'utilisateur reçoit une demande de validation de son compte?
 Est ce qu'il faut avoir la meme base d'image(salle)?
 quand on reserve on est redirigé vers historique?
 Dans l'historique est ce qu'on specifie le nombre de joueurs aussi?
+
+
+[Code]
+- DÉBUT
+const mongoose = require('mongoose')
+const validatorPackage = require('validator')
+
+const UserSchema = new mongoose.Schema({
+      .......
+      email: {
+        type: String,
+        unique: true,
+        required: [true, 'Email address is required'],
+        validate: {
+          validator: validatorPackage.isEmail,
+          message: 'Please provide a valid email',
+        },
+      },
+      .......
+})
+
+const model = mongoose.model('User', UserSchema)
+module.exports = model
+- FIN

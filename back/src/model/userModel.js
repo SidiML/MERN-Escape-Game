@@ -19,7 +19,7 @@ const UserSchema = new mongoose.Schema({
         required: true
     }
 
-}, {collection: "rooms"}) //, {versionKey: true})
+}, {collection: "users"}) //, {versionKey: true})
 
 const UserModel = mongoose.model('UserModel', UserSchema)
 //UserModel.createCollection()

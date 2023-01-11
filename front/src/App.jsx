@@ -3,6 +3,7 @@ import { useState } from "react";
 
 // *pages
 import "./styles/App.css";
+import logoPegi18 from "../src/media/images/Logo_Pegi18.jpg"
 import AppHeader from "./components/AppHeader";
 import AppMain from "./components/AppMain";
 import AppFooter from "./components/AppFooter";
@@ -12,9 +13,9 @@ class App extends Component {
     return (
       <>
         <AppHeader />
-        <h1>Bienvenue sur le site de résa Escape Room</h1>
-        <ul>
-          <MediaCard sx={{ marginLeft: "5%" }} />
+        <ul style={{ marginTop: 20, textAlign: "center"}}>
+          <h1>Bienvenue sur le site de résa Escape Room</h1>
+          <MediaCard />
           <MediaCard />
           <MediaCard />
           <MediaCard />
@@ -37,14 +38,22 @@ import Typography from '@mui/material/Typography';
 
 export function MediaCard() {
   return (
-    <Card sx={{ display: 'inline-block', maxWidth: 345 }}>
+    <Card 
+    // sx={{ display: 'inline-block', maxWidth: 345 }}
+    sx={{ marginTop: 5, marginLeft: "3%",
+      display: "inline-block",
+      maxWidth: 350,
+      flexDirection: "column",
+      // alignItems: "center",
+    }}
+    >
       <CardMedia
         sx={{ height: 140 }}
         image="https://picsum.photos/200/100"
         // image="/static/images/cards/contemplative-reptile.jpg"
         title="green iguana"
       />
-      <CardContent>
+      <CardContent sx={{ textAlign: "left" }}>
         <Typography gutterBottom variant="h5" component="div">
           Lizard
         </Typography>
@@ -54,8 +63,9 @@ export function MediaCard() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small">Detail</Button>
+        <Button size="small">Reservation</Button>
+        <img src={logoPegi18} style={{ marginLeft:"110px", width:"45px", height:"auto"}} alt="Logo Pegi 18" />
       </CardActions>
     </Card>
   );
