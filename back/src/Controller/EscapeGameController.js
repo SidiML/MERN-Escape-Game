@@ -1,1 +1,0 @@
-const {EscapeGameModel} = require("../model/EscapeGameModel.js")
