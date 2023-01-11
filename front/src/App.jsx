@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { useState } from "react";
+import React, { Component, useState } from "react";
+import { Link } from "react-router-dom";
 
 // *pages
 import "./styles/App.css";
@@ -63,9 +63,9 @@ export function MediaCard() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Detail</Button>
-        <Button size="small">Reservation</Button>
-        <img src={logoPegi18} style={{ marginLeft:"110px", width:"45px", height:"auto"}} alt="Logo Pegi 18" />
+        {/* <Button size="small"><Link to="/Booking">Detail</Link></Button> */}
+        <Button size="small"><Link to="/Reservation">Reservation</Link></Button>
+        <img src={logoPegi18} style={{ marginLeft:"190px", width:"45px", height:"auto"}} alt="Logo Pegi 18" />
       </CardActions>
     </Card>
   );
