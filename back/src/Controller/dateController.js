@@ -1,7 +1,7 @@
-const {EscapeGameModel} = require("../model/roomModel.js")
+const {dateModel} = require("../model/roomModel.js")
 
 //* Toys
-exports.createToy = async (requête, réponse) => {
+exports.createDate = async (requête, réponse) => {
     const userData = requête.body
     if(isObjectOrIsArrayOfObjects(userData) === "isObject"){
         const ToyExisting = await ToyModel.find({name: userData.name}) //const Toy = new ToyModel(data)

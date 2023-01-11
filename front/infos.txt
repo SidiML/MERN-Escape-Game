@@ -2,6 +2,9 @@
 - https://www.crazygames.fr/
 - https://crack-the-egg.com/
 
+[Documentation]
+- https://stackoverflow.com/questions/18022365/mongoose-validate-email-syntax
+
 [Questions au client]
 L'architecture: separer back et front.
 Est ce qu'on a besion de plusieurs profil de joueurs  un seul utilisateur
