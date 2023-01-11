@@ -21,7 +21,7 @@ exports.createDate = async (requête, réponse) => {
     // réponse.send(userData); console.log(userData)
 }
 
-exports.getDates = async (requête, réponse) => {
+exports.getDate = async (requête, réponse) => {
     //* Methode Statique
     // const Dates = await DateModel.find()
     // réponse.send(Dates); console.log("Dates", Dates)
