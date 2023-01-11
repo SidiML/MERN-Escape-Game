@@ -12,7 +12,7 @@ import Home from './pages/Home.jsx'
 import Reservation from './pages/Reservation.jsx'
 import Booking from './pages/Booking.jsx'
 import Historique from './pages/Historique.jsx'
-
+import ResetPassword from './pages/ResetPassword.jsx'
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 root.render(
@@ -26,6 +26,7 @@ root.render(
         <Route path="/Reservation" element={<Reservation />} />
         <Route path="/Booking" element={<Booking />} />
         <Route path="/Historique" element={<Historique />} />
+        <Route path="/ResetPassword" element={<ResetPassword />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
