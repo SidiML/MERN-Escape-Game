@@ -5,6 +5,7 @@
 - https://www.crazygames.fr/
 - https://crack-the-egg.com/
 - https://www.saferinternetday.org/fr/supporters/pegi
+- https://www.saferinternetday.org/documents/167278/4100810/PEGILogos2019.jpg/a4e6834c-ac7d-428a-9b38-cbcee4c2ff09?t=1548862091672
 
 [Documentation]
 - https://mongoosejs.com/docs/tutorials/dates.html

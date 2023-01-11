@@ -16,15 +16,15 @@ router.get("/", (requête, réponse) => {
 })
 
 //? User
-router.post("/User", userController.createUser)
+router.post("/User/Add", userController.createUser)
 router.get("/User", userController.getUser)
 
 //? Room
 router.get("/Room", roomController.getRoom)
-router.post("/Room", roomController.createRoom)
+router.post("/Room/Add", roomController.createRoom)
 
 //? Date
 router.get("/Date", dateController.getDate)
-router.post("/Date", dateController.createDate)
+router.post("/Date/Add", dateController.createDate)
 
 module.exports = router
