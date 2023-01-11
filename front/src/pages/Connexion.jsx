@@ -61,7 +61,7 @@ function SignIn() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">Mot de passe oublié? </Link> </Grid>
+                <Link href="/ResetPassword" variant="body2">Mot de passe oublié? </Link> </Grid>
               <Grid item>
                 <Link href="/Inscription" variant="body2">{"Pas de compte? Inscrivez-vous"}</Link></Grid>
             </Grid>
