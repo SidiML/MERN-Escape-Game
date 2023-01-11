@@ -48,8 +48,8 @@ function ResetSignIn() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">RÉINITIALISER LE MOT DE PASSE</Typography>
-          <Typography component="p" variant="p">Entrez votre adresse email pour recevoir un lien et réinitialiser votre mot de passe</Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }} >
+            <Typography component="p" variant="p">Entrez votre adresse email pour recevoir un lien et réinitialiser votre mot de passe</Typography>
 
             <TextField margin="normal"required fullWidth id="email" label="Email Address"
               name="email" autoComplete="email" autoFocus/>

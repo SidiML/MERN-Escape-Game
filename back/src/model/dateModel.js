@@ -1,18 +1,9 @@
 const mongoose = require('mongoose')
 
 const DateSchema = new mongoose.Schema({
-    lundi: true,
-    mardi: true,
-    email: {
-        type: String,
-        unique: true,
-        required: true
-    },
-    dateDeNaissance: {
-        type: Date,
-        unique: true,
-        required: true
-    }
+    nameRoom: String,
+    date: Date,
+    isFree: String
 
 }, {collection: "dates"}) //, {versionKey: true})
 

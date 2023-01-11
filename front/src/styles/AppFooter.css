@@ -6,14 +6,20 @@ footer{
 }
 
 footer section{
-    
-}
-footer section:nth-child(1), footer section:nth-child(2){
-    margin-right: 12%;
+    /* display: block; */
+    /* border: 1px solid red; */
+    margin: 4%;
+    width: 500px; height: 200px;
+
+} footer section:nth-child(1), footer section:nth-child(2){
+    margin-right: 4%;
+
+} footer section:last-child{
+    display: block;
 }
 
 footer div{
-    /* display: flex; */
+    /* display: inline-block; */
 }
 
 footer .AppLogo{
