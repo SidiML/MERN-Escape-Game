@@ -15,7 +15,7 @@ exports.createUser = async (requête, réponse) => {
         email: requête.body.email,
         dateDeNaissance: requête.body.dateDeNaissance,
         password: hash,
-        creationDate: new Date()
+        // creationDate: new Date()
     }
     if(isObjectOrIsArrayOfObjects(userDataTimeStamped) === "isObject"){
         const UserExisting = await UserModel.find({email: userDataTimeStamped.email}) //const User = new UserModel(data)
@@ -53,18 +53,23 @@ exports.getUsers = async(requête, réponse) => {
         })
 }
 
-exports.connexion = async(requête,réponse) =>{
+exports.createToken = async(requête,réponse) =>{
     const user = await UserModel.find({email: requête.body.email})
 
     if(user.length === 0){
-        réponse.json({status:404, msg:"email doesn't exist"})
+        réponse.json({status: 404, msg:"Email doesn't exist"})
     } else {
         const matchPassword = await bcrypt.compare(requête.body.password, user[0].password)
         if(matchPassword){
-            const token = jwt.sign({_id:user[0]._id},'pitichat',{expiresIn:'1h'})
-            réponse.json({status:200,token,user:user[0]})
+            const token = jwt.sign({_id: user[0]._id}, 'pitichat', {expiresIn:'1h'})
+            réponse.json({status: 200, token, user: user[0]})
         } else {
-            réponse.json({status:401, msg:"bad password"})
+            réponse.json({status: 401, msg: "bad password"})
         }
     }
+}
+
+exports.checkToken = async(requête,réponse) =>{
+    const UserConnecting = await UserModel.find({_id: requête.body._id})
+    réponse.json({status: 200, msg: "token ok", user: UserConnecting[0]})
 }

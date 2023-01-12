@@ -44,46 +44,43 @@ const theme = createTheme();
 
 function SignUp() {
 
-  const [prenom, setPrenom] = useState("");
-  const [nom, setNom] = useState("");
+  const [prenom, setPrenom] = useState("")
+  const [nom, setNom] = useState("")
 
-  const [email, setEmail] = useState("");
-  const [datenaissance, setDateNaissance] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [email, setEmail] = useState("")
+  const [datenaissance, setDateNaissance] = useState("")
+  const [password, setPassword] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
+
   const [redirect, setRedirect] = useState(false)
 
   
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    //console.log(password, confirmPassword);
     console.log({
-      email: data.get("email"),
-      password: data.get("password"),
+      prenom: prenom,
+      nom: nom,
+      email: email,
+      datenaissance: datenaissance,
+      password: password
     });
-    console.log(password, confirmPassword);
-    console.log({
-        prenom: prenom,
-        nom : nom,
-        email : email,
-        datenaissance : datenaissance,
-        password: password
-      });
 
     const Users = {
-    prenom: prenom,
-    nom : nom,
-    email : email,
-    datedeNaissance : datenaissance,
-    password: password
+      prenom: prenom,
+      nom : nom,
+      email : email,
+      datedeNaissance : datenaissance,
+      password: password
     };
-    axios.post('http://localhost:5000/User/Add',Users)
-    .then((res)=>{
-        console.log(res)
-        if(res.data.status === 200){
-          setRedirect(true)
-        }
-    })
+
+    await axios.post("/User/Add", Users)
+      .then((réponse)=>{
+          console.log(réponse)
+          // if(res.data.status === 200){
+          //   setRedirect(true)
+          // }
+      }).catch((erreur)=>{ console.log(erreur);})
   };
 
   if(redirect) {

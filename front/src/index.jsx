@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Axios from "axios";
-Axios.defaults.baseURL = "http://localhost:5173"
+Axios.defaults.baseURL = "http://localhost:5000"
 
 //* Pages
 import App from "./App.jsx";
