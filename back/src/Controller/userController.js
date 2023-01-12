@@ -5,11 +5,16 @@ const {isObjectOrIsArrayOfObjects, isObject, isArrayOfObjects} = require("../Mod
 exports.createUser = async (requête, réponse) => {
     const userData = requête.body
     if(isObjectOrIsArrayOfObjects(userData) === "isObject"){
-        const UserExisting = await UserModel.find({name: userData.name}) //const User = new UserModel(data)
+        const UserExisting = await UserModel.find({email: userData.email}) //const User = new UserModel(data)
+
         if(UserExisting.length === 0){
-            const addUser = await UserModel.insertMany(userData).then((UserAdded)=>{
-                réponse.status(200).send(UserAdded); console.log(UserAdded) // réponse.status(200).json({ message: "Recherche -> <Users> Trouvé... !", resultat: data })
-            }).catch((erreur)=> {réponse.status(400); console.log(erreur)})
+            const userDataTimeStamped = {
+                
+            }
+            const addUser = await UserModel.insertMany(userData)
+                .then((UserAdded)=>{
+                    réponse.status(200).send(UserAdded); console.log(UserAdded) // réponse.status(200).json({ message: "Recherche -> <Users> Trouvé... !", resultat: data })
+                }).catch((erreur)=> {réponse.json({status:400}); console.log(erreur)})
 
         }else{
             réponse.status(404).send("This User already exist") // return "User already exist"
@@ -32,7 +37,7 @@ exports.getUser = async (requête, réponse) => {
         réponse.status(200).json({ message: "Recherche -> <Users> Trouvé... !", resultat: data })
         console.log(data)
     }).catch((error)=>{
-        réponse.status(400).json({ message: "Recherche -> <Users> non Trouvé... !", resultat: error })
+        réponse.json({ status: 400, message: "Recherche -> <Users> non Trouvé... !", resultat: error })
         console.log(error)
     })
 }

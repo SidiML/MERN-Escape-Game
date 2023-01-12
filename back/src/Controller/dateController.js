@@ -5,11 +5,13 @@ const {isObjectOrIsArrayOfObjects, isObject, isArrayOfObjects} = require("../Mod
 exports.createDate = async (requête, réponse) => {
     const userData = requête.body
     if(isObjectOrIsArrayOfObjects(userData) === "isObject"){
-        const DateExisting = await DateModel.find({name: userData.name}) //const Date = new DateModel(data)
+        const DateExisting = await DateModel.find({nameRoom: userData.nameRoom}) //const Date = new DateModel(data)
+
         if(DateExisting.length === 0){
-            const addDate = await DateModel.insertMany(userData).then((DateAdded)=>{
-                réponse.status(200).send(DateAdded); console.log(DateAdded) // réponse.status(200).json({ message: "Recherche -> <Dates> Trouvé... !", resultat: data })
-            }).catch((erreur)=> {réponse.status(400); console.log(erreur)})
+            const addDate = await DateModel.insertMany(userData)
+                .then((DateAdded)=>{
+                    réponse.status(200).send(DateAdded); console.log(DateAdded) // réponse.status(200).json({ message: "Recherche -> <Dates> Trouvé... !", resultat: data })
+                }).catch((erreur)=> {réponse.json({status:400}); console.log(erreur)})
 
         }else{
             réponse.status(404).send("This Date already exist") // return "Date already exist"
@@ -28,11 +30,12 @@ exports.getDate = async (requête, réponse) => {
     // console.log("Données Obtenu")
 
     //* Methode Dynamique
-    const DateExisting = await DateModel.find().then((data)=>{
-        réponse.status(200).json({ message: "Recherche -> <Dates> Trouvé... !", resultat: data })
-        console.log(data)
-    }).catch((error)=>{
-        réponse.status(400).json({ message: "Recherche -> <Dates> non Trouvé... !", resultat: error })
-        console.log(error)
-    })
+    const DateExisting = await DateModel.find()
+        .then((data)=>{
+            réponse.status(200).json({ message: "Recherche -> <Dates> Trouvé... !", resultat: data })
+            console.log(data)
+        }).catch((error)=>{
+            réponse.status(400).json({ message: "Recherche -> <Dates> non Trouvé... !", resultat: error })
+            console.log(error)
+        })
 }

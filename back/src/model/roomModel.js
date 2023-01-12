@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const RoomSchema = mongoose.Schema({
+const RoomSchema = new mongoose.Schema({
     name: String,
     age: Number,
     capacity: Number,
@@ -9,9 +9,9 @@ const RoomSchema = mongoose.Schema({
     price: Number,
     minplayers: Number
 
-}, {collection: "rooms"}) //, {versionKey: true})
+}, {collection: "rooms"}) //, {versionKey: "true"})
 
-const RoomModel = mongoose.model('MyRoomSchema', RoomSchema)
-//RoomModel.createCollection()
+const RoomModel = mongoose.model('RoomModel', RoomSchema)
+// RoomModel.createCollection()
 
 module.exports = {RoomModel}
