@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import axios from 'axios'
+import {Navigate} from  'react-router-dom'
 // *pages
 import "../styles/App.css";
 import AppHeader from "../components/AppHeader";
@@ -19,6 +20,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+
 
 function Copyright(props) {
   return (
@@ -49,7 +51,7 @@ function SignUp() {
   const [datenaissance, setDateNaissance] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
+  const [redirect, setRedirect] = useState(false)
 
   
   const handleSubmit = (event) => {
@@ -67,16 +69,27 @@ function SignUp() {
         datenaissance : datenaissance,
         password: password
       });
-//fetch("localhost:5000/users") 
+
     const Users = {
     prenom: prenom,
     nom : nom,
     email : email,
-    datenaissance : datenaissance,
+    datedeNaissance : datenaissance,
     password: password
     };
-   
+    axios.post('http://localhost:5000/User/Add',Users)
+    .then((res)=>{
+        console.log(res)
+        if(res.data.status === 200){
+          setRedirect(true)
+        }
+    })
   };
+
+  if(redirect) {
+    return <Navigate to="/Connexion"/>
+  }
+
 
   return (
     <ThemeProvider theme={theme}>

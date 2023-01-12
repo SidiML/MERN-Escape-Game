@@ -15,12 +15,12 @@ class App extends Component {
         <AppHeader />
         <ul style={{ marginTop: 20, textAlign: "center"}}>
           <h1>Bienvenue sur le site de résa Escape Room</h1>
-          <MediaCard />
-          <MediaCard />
-          <MediaCard />
-          <MediaCard />
-          <MediaCard />
-          <MediaCard />
+          <MediaCard  size={350}/>
+          <MediaCard size={350}/>
+          <MediaCard size={350}/>
+          <MediaCard size={350}/>
+          <MediaCard size={350}/>
+          <MediaCard size={350}/>
         </ul>
         <AppMain />
         <AppFooter />
@@ -36,13 +36,13 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-export function MediaCard() {
+export function MediaCard({size}) {
   return (
     <Card 
     // sx={{ display: 'inline-block', maxWidth: 345 }}
     sx={{ marginTop: 5, marginLeft: "3%",
       display: "inline-block",
-      maxWidth: 350,
+      maxWidth: size,
       flexDirection: "column",
       // alignItems: "center",
     }}
