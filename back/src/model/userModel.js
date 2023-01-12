@@ -8,11 +8,10 @@ const UserSchema = new mongoose.Schema({
         unique: true,
         required: true
     },
-    dateDeNaissance: { type: Date, unique: false, required: true },
-    password: { type: String, required: true },
-    creationDate: {type: Date, required: true}
+    dateDeNaissance: { type: Date, required: true },
+    password: { type: String, required: true }
 
-}, {collection: "users", versionKey: "true"})
+}, {collection: "users"}) // versionKey: true
 
 const UserModel = mongoose.model('UserModel', UserSchema)
 //UserModel.createCollection()

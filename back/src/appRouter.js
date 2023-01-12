@@ -17,14 +17,36 @@ router.get("/", (requête, réponse) => {
 
 //? User
 router.post("/User/Add", userController.createUser)
-router.get("/User", userController.getUser)
+router.get("/Users", userController.getUsers)
+router.post('/Connexion', userController.connexion)
+
+function withAuth(req,res,next){
+    const token = req.headers['authorization']
+    console.log(req.headers)
+    if(token === null){
+        res.json({status:401, msg:'bad token 1'})
+    }
+    jwt.verify(token,'pitichat',function(err,decoded){
+        if(err){
+            res.json({status:401, msg:"bad token 2"})
+            console.log(err)
+        }
+        req.body._id = decoded._id
+        next()
+    })
+}
+
+app.get('/Connexion/checkToken', withAuth, userController.checkToken)
 
 //? Room
-router.get("/Room", roomController.getRoom)
+router.get("/Room/:id", roomController.getRoom)
 router.post("/Room/Add", roomController.createRoom)
 
 //? Date
-router.get("/Date", dateController.getDate)
+router.get("/Date/:freedate", dateController.getDate)
 router.post("/Date/Add", dateController.createDate)
+
+
+
 
 module.exports = router

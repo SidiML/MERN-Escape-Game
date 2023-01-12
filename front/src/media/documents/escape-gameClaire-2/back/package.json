@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/App.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -17,8 +16,5 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.8.2",
     "nodemon": "^2.0.20"
-  },
-  "devDependencies": {
-    "@types/bcrypt": "^5.0.0"
   }
 }
