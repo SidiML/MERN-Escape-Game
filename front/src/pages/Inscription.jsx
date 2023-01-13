@@ -50,7 +50,7 @@ function SignUp() {
   const [email, setEmail] = useState("")
   const [datenaissance, setDateNaissance] = useState("")
   const [password, setPassword] = useState("")
-  
+
   const [confirmPassword, setConfirmPassword] = useState("")
 
   const [redirect, setRedirect] = useState(false)
@@ -63,12 +63,14 @@ function SignUp() {
       nom: nom,
       email: email,
       dateDeNaissance: datenaissance,
+      dateNaissance: datenaissance,
       password: password
     }; //console.log(Users);
 
     await axios.post("/User/Add", Users)
       .then((réponse)=>{
           console.log(réponse)
+          console.log(réponse.data)
           console.log(réponse.data)
           console.log("status", réponse.status);
           if(réponse.status === 200){

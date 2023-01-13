@@ -27,32 +27,32 @@ function Booking1() {
   const params = useParams()
   let lastDate = ''
 
-//   useEffect(()=>{
-//       const roomId = params.id
-//       // console.log(params.id)
+  useEffect(()=>{
+      const roomId = params.id
+      // console.log(params.id)
 
-//       axios.get(`http://localhost:5000/room/${roomId}`)
-//       .then((res)=>{
-//           setRoom(res.data.rooms) 
-//       })
+      axios.get(`http://localhost:5000/room/${roomId}`)
+      .then((res)=>{
+          setRoom(res.data.rooms) 
+      })
 
-//       fetchSlots(roomId)
-//   },[])
+      fetchSlots(roomId)
+  },[])
 
-// // console.log(room)
+// console.log(room)
 
-// const fetchSlots = (roomId) => {
-//   axios(`http://localhost:5000/Date/${roomId}`)
-//     .then((result)=>{
-//       // console.log(result)
+const fetchSlots = (roomId) => {
+  axios(`http://localhost:5000/Date/${roomId}`)
+    .then((result)=>{
+      // console.log(result)
      
-//       result.data.dates.sort(function(a,b){
-//         return new Date(a.date) - new Date(b.date);
-//       });
+      result.data.dates.sort(function(a,b){
+        return new Date(a.date) - new Date(b.date);
+      });
       
-//       setSlots(result.data.dates)
-//     })
-// }
+      setSlots(result.data.dates)
+    })
+}
 
 const getDay = (dateString) => {
   let date = new Date(dateString)
