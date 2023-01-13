@@ -29,10 +29,11 @@ function Booking1() {
 
   useEffect(()=>{
       const roomId = params.id
-      // console.log(params.id)
+      //console.log(params.id)
 
-      axios.get(`http://localhost:5000/room/${roomId}`)
+      axios.get(`http://localhost:5000/Room/${roomId}`)
       .then((res)=>{
+        console.log(res);
           setRoom(res.data.rooms) 
       })
 
