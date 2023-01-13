@@ -62,7 +62,7 @@ function SignUp() {
       prenom: prenom,
       nom: nom,
       email: email,
-      datenaissance: datenaissance,
+      dateNaissance: datenaissance,
       password: password
     });
 
@@ -70,13 +70,14 @@ function SignUp() {
       prenom: prenom,
       nom : nom,
       email : email,
-      datedeNaissance : datenaissance,
+      dateDeNaissance : datenaissance,
       password: password
     };
 
     await axios.post("/User/Add", Users)
       .then((réponse)=>{
           console.log(réponse)
+          console.log(réponse.data)
           // if(res.data.status === 200){
           //   setRedirect(true)
           // }
