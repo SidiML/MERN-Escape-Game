@@ -23,19 +23,28 @@ exports.createRoom = async (requête, réponse) => {
 
 
 exports.getRoom = async (requête, réponse) => {
-    //* Methode Statique
-    // const Room = await RoomModel.find()
-    // réponse.send(Room); console.log("Room", Room)
-    // console.log("Données Obtenu")
+  //* Methode Statique
+  // const Room = await RoomModel.find()
+  // réponse.send(Room); console.log("Room", Room)
+  // console.log("Données Obtenu")
 
-    //* Methode Dynamique
-    const userData = requête.body
-    const RoomExisting = await RoomModel.find({_id: userData.id})
-        .then((roomFound)=>{
-            réponse.status(200).json({ message: "Recherche -> <Room> Trouvé... !", resultat: roomFound })
-            console.log(roomFound)
-        }).catch((error)=>{
-            réponse.status(400).json({ message: "Not Found -> <Room>  ... !", resultat: error })
-            console.log(error)
-        })
+  //* Methode Dynamique
+  const userData = requete.params
+  console.log(userData);
+  const RoomExisting = await RoomModel.find({ _id: userData.id })
+    .then((roomFound) => {
+      réponse
+        .status(200)
+        .json({
+          message: "recherche -> <Room> Trouvé... !",
+          resultat: roomFound,
+        });
+      console.log(roomFound);
+    })
+    .catch((error) => {
+      réponse
+        .status(400)
+        .json({ message: "Not Found -> <Room>  ... !", resultat: error });
+      console.log(error);
+    });
 }

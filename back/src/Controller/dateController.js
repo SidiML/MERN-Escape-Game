@@ -30,6 +30,7 @@ exports.getDate = async (requête, réponse) => {
     // console.log("Données Obtenu")
 
     //* Methode Dynamique
+    const userData = requête.params
     const DateExisting = await DateModel.find()
         .then((data)=>{
             réponse.status(200).json({ message: "Recherche -> <Dates> Trouvé... !", resultat: data })
