@@ -14,7 +14,7 @@ exports.createUser = async (requête, réponse) => {
         nom: requête.body.nom,
         email: requête.body.email,
         dateDeNaissance: requête.body.dateDeNaissance,
-        password: hash,
+        password: hash
         // creationDate: new Date()
     }
     if(isObjectOrIsArrayOfObjects(userDataTimeStamped) === "isObject"){
@@ -25,7 +25,7 @@ exports.createUser = async (requête, réponse) => {
                 .then((UserAdded)=>{
                     réponse.status(200).send(UserAdded); console.log(UserAdded) // réponse.status(200).json({ message: "Recherche -> <Users> Trouvé... !", resultat: data })
                 }).catch((erreur)=> {réponse.json({status:400, message: erreur}); console.log(erreur)})
-
+            // addUser.save()
         }else{
             réponse.status(404).send("This User already exist") // return "User already exist"
         }
@@ -36,21 +36,24 @@ exports.createUser = async (requête, réponse) => {
     // réponse.send(userData); console.log(userData)
 }
 
-exports.getUsers = async(requête, réponse) => {
+exports.getUserByEmail = async(requête, réponse) => {
     //* Methode Statique
     // const Users = await UserModel.find()
     // réponse.send(Users); console.log("Users", Users)
     // console.log("Données Obtenu")
+    const userData = requête.body
 
     //* Methode Dynamique
-    const UsersExisting = await UserModel.find()
-        .then((data)=>{
-            réponse.status(200).json({ message: "Recherche -> <Users> Trouvé... !", resultat: data })
-            console.log(data)
+    const UserExisting = await UserModel.find({email: userData.email})
+        .then((UserFounded)=>{
+            réponse.status(200).json({ message: "Recherche -> <User> Trouvé... !", resultat: UserFounded })
+            console.log(UserFounded)
         }).catch((error)=>{
-            réponse.json({ status: 400, message: "Recherche -> <Users> non Trouvé... !", resultat: error })
+            réponse.json({ status: 400, message: "Not <User> Trouvé... !", resultat: error })
             console.log(error)
         })
+    // this.createToken()
+    // this.checkToken()
 }
 
 exports.createToken = async(requête,réponse) =>{

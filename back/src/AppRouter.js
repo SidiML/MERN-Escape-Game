@@ -22,7 +22,7 @@ router.get("/", (requête, réponse, next) => {
 
 //? User
 router.post("/User/Add", userController.createUser)
-router.get("/Users", userController.getUsers)
+router.get("/User", userController.getUserByEmail)
 router.post('/Token/Create', userController.createToken)
 
 function withAuth(requête, réponse, next){

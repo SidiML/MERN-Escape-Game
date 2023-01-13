@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import axios from 'axios'
 import {Navigate} from  'react-router-dom'
+import axios from 'axios'
+
 // *pages
 import "../styles/App.css";
 import AppHeader from "../components/AppHeader";
@@ -46,40 +47,33 @@ function SignUp() {
 
   const [prenom, setPrenom] = useState("")
   const [nom, setNom] = useState("")
-
   const [email, setEmail] = useState("")
   const [datenaissance, setDateNaissance] = useState("")
   const [password, setPassword] = useState("")
+  
   const [confirmPassword, setConfirmPassword] = useState("")
 
   const [redirect, setRedirect] = useState(false)
-
   
   const handleSubmit = async(event) => {
     event.preventDefault();
-    //console.log(password, confirmPassword);
-    console.log({
-      prenom: prenom,
-      nom: nom,
-      email: email,
-      datenaissance: datenaissance,
-      password: password
-    });
 
     const Users = {
       prenom: prenom,
-      nom : nom,
-      email : email,
-      datedeNaissance : datenaissance,
+      nom: nom,
+      email: email,
+      dateDeNaissance: datenaissance,
       password: password
-    };
+    }; //console.log(Users);
 
     await axios.post("/User/Add", Users)
       .then((réponse)=>{
           console.log(réponse)
-          // if(res.data.status === 200){
-          //   setRedirect(true)
-          // }
+          console.log(réponse.data)
+          console.log("status", réponse.status);
+          if(réponse.status === 200){
+            setRedirect(true)
+          }
       }).catch((erreur)=>{ console.log(erreur);})
   };
 
@@ -189,7 +183,11 @@ function SignUp() {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   
                 />
-                {password !== "" && password === confirmPassword ? <small style={{color:"green"}}>Les mots de passe match</small>: password !== "" && password !== confirmPassword ? <small style={{color:"red"}}>Les mots de passe ne correspondent pas</small> : "" }
+                {password !== "" && password === confirmPassword ? (
+                  <small style={{color:"green"}}>Les mots de passe match</small>
+                ): password !== "" && password !== confirmPassword ? (
+                  <small style={{color:"red"}}>Les mots de passe ne correspondent pas</small>
+                ) : "" }
               </Grid>
 
               {/* <Grid item xs={12}>

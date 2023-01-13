@@ -1,4 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
+import {Navigate} from  'react-router-dom'
+import axios from 'axios'
 
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -22,43 +24,64 @@ import AppFooter from "../components/AppFooter";
 
 const theme = createTheme();
 
+
 function SignIn() {
-  const handleSubmit = (event) => {
+  
+
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+  const [user, setUser] = useState()
+  const [logged, setLogged] = useState(false)
+  
+  const [redirect, setRedirect] = useState(false)
+
+
+  const handleSubmit = async(event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    //const Users = { email: email, password: password};
+    //console.log(Users);
+
+    await axios.post("/Token/Create", {email: email, password: password})
+      .then((réponse)=>{
+          console.log(réponse)
+          console.log(réponse.data)
+          console.log(réponse.token)
+          if(réponse.status === 200){
+            localStorage.setItem("token", réponse.data.token)
+            setUser(réponse.user)
+            setLogged(true)
+            setRedirect(true)
+          }
+      }).catch((erreur)=>{ console.log(erreur);})
   };
+
+  if(redirect){
+    return <Navigate to="/Home" state={logged} /> 
+  }
+
+  console.log(logged, user);
 
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
+        <Box sx={{ marginTop: 8, display: "flex", flexDirection: "column", alignItems: "center" }} >
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">Connexion</Typography>
+
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }} >
+            <TextField margin="normal" id="email" name="email" label="Email Address" autoComplete="email" fullWidth required autoFocus
+              onChange={e => setEmail(e.target.value)}
+            />
+            <TextField type="password" margin="normal" id="password" name="password" label="Password" autoComplete="current-password" sx={{ width: '100%' }}
+              onChange={e => setPassword(e.target.value)}
+            />
+            {/* <FormControlLabel control={<Checkbox value="remember" color="primary" />} label="Remember me"/> */}
+            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} > CONNEXION </Button>
 
-            <TextField margin="normal"required fullWidth id="email" label="Email Address"
-              name="email" autoComplete="email" autoFocus/>
-
-            <TextField margin="normal" name="password" label="Password" type="password" id="password" autoComplete="current-password" sx={{ width: '100%' }}/>
-            {/* <FormControlLabel control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"/> */}
-            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} >
-              CONNEXION
-            </Button>
             <Grid container>
               <Grid item xs>
                 <Link href="/ResetPassword" variant="body2">Mot de passe oublié? </Link> </Grid>

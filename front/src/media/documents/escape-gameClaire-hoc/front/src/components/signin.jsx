@@ -10,7 +10,9 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {Link} from 'react-router-dom'
+import {Link, Navigate} from 'react-router-dom'
+import axios from 'axios'
+import { UserContext } from '../context/userContext';
 
 
 
@@ -18,6 +20,9 @@ const theme = createTheme();
 
 
 export default function SignIn() {
+
+    const [redirect, setRedirect] = useState(false)
+    const {user, setUser} = useContext(UserContext)
     
 
     const handleSubmit = (event) => {
@@ -30,9 +35,23 @@ export default function SignIn() {
           password: data.get('password'),
         }
 
-        
-
+    axios.post('http://localhost:4000/login', dataObj)
+        .then((res)=>{
+            console.log(res)
+            if(res.data.status === 200){
+                window.localStorage.setItem('escape-key',res.data.token)
+                setUser({
+                    isLogged: true, 
+                    infos : res.data.user
+                })
+                setRedirect(true)
+            }
+        })        
     };
+
+    if(redirect){
+        return <Navigate to="/"/>
+    }
 
   return (
     <>

@@ -60,7 +60,7 @@ const usersRoutes = (app) => {
     }
 
     app.get('/checkToken', withAuth, async(req,res) =>{
-        const user = await User.find({_id:req.body_id})
+        const user = await User.find({_id:req.body._id})
         res.json({status:200, msg:"token ok", user:user[0]})
     })
 

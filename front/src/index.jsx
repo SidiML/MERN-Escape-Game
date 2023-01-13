@@ -14,6 +14,7 @@ import Booking from './pages/Booking.jsx'
 import Historique from './pages/Historique.jsx'
 import ResetPassword from './pages/ResetPassword.jsx'
 
+
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 root.render(
   <React.StrictMode>
