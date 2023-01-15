@@ -1,5 +1,6 @@
 [Recherche]
 - Google https://www.google.com/search?client=firefox-b-d&q=pegi+rating+system
+- T-rex - https://elgoog.im/t-rex/3d/
 
 [Source]
 - https://www.crazygames.fr/
@@ -10,6 +11,7 @@
 [Documentation]
 - https://mongoosejs.com/docs/tutorials/dates.html
 - https://stackoverflow.com/questions/18022365/mongoose-validate-email-syntax
+- https://www.scaler.com/topics/add-property-to-object-javascript/
 
 [Conception]
 - Questions au client
