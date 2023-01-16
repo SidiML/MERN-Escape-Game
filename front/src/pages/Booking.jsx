@@ -1,20 +1,23 @@
 import React, {useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from "react-router-dom";
 import axios from 'axios'
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
+
 
 // *pages
 import "../styles/App.css";
 import AppHeader from "../components/AppHeader";
 import AppMain from "../components/AppMain";
 import AppFooter from "../components/AppFooter";
-import { MediaCard } from '../App';
+
+
+//* Component
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+// import { CardActionArea } from '@mui/material';
 
 
 
@@ -128,14 +131,105 @@ return (
 
 
 function Booking () {
+
+  const {RoomId, jour} = useParams()
+  console.log(useParams());
+  const [rooms, setRooms] = useState([])
+  const [dates, setDates] = useState([])
+  const Days = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
+
+      useEffect(()=>{
+        axios.get("/Rooms")
+            .then((réponse)=> {
+                console.log(réponse.data.resultat)
+                if(réponse.status === 200){
+                    setRooms(réponse.data.resultat)
+                }
+            })
+            .catch((erreur)=> console.log(erreur))
+
+        axios.get("/Dates")
+          .then((réponse)=> {
+              console.log(réponse.data.resultat)
+              if(réponse.status === 200){
+                  setDates(réponse.data.resultat)
+              }
+          })
+          .catch((erreur)=> console.log(erreur))
+
+      }, [])
+
+
   return (
     <section>
       <AppHeader />
 
-      <Booking1/>
-      {/* <ul>
-         <MediaCard size={"1400px"} />
-      </ul> */}
+      {/* <Booking1/> */}
+      <ul style={{ marginTop: 20, textAlign: "center"}}>
+              {rooms.map(i => {
+                  // console.log(i._id)
+                  if(i._id === RoomId){
+                    // return <MediaCard index={i._id} size={1100} hauter={350} img={i.img} name={i.name} description={i.description} pegi={`../src/media/images/Logo_Pegi${i.age}.${i.age === 7 ? "png" : "jpg"}`}/>
+                    return (
+                      <Card 
+                      // sx={{ display: 'inline-block', maxWidth: 345 }}
+                      sx={{ marginTop: 5, marginLeft: "3%",
+                        display: "inline-block",
+                        maxWidth: 1100,
+                        flexDirection: "column",
+                        // alignItems: "center",
+                      }}
+                      key={i._id}
+                      >
+                        <CardMedia
+                          sx={{ height: 350 }} image={i.img} title="green iguana"
+                        >
+
+                        <img src={`../src/media/images/Logo_Pegi${i.age}.${i.age === 7 ? "png" : "jpg"}`} style={{ marginTop: "228px", marginLeft:"1000px", width:"100px", height:"auto"}} alt="Logo Pegi 18" />
+                        </CardMedia>
+                        <CardContent sx={{ textAlign: "left" }} >
+                          <Typography gutterBottom variant="h5" component="div">
+                            {i.name}
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            {i.description}
+                          </Typography>
+                          <Typography variant="h6" color="text.secondary" style={{marginTop:'18px', marginBottom:'10px'}}>
+                            <b>Disponibilité</b>
+                          </Typography>
+                        </CardContent>
+                        <CardActions>
+                          <Typography variant="h3" color="initial" style={{marginTop: "75px", fontSize: "10px"}}>
+                            <Button size="small"><Link to={`/Home`}>Retour</Link></Button>
+                          </Typography>
+                          {
+                            Days.map(i => {
+                              return (
+                                <ul style={{ marginLeft: 60, textAlign: "center"}}>
+                                  <li><b>{i}</b></li>
+                                  <li>
+                                    <Button size="small" style={{margin:'5px', backgroundColor: "green"}} variant="contained">
+                                      {/* {isThisMorning(item.date) ? 'MATIN' : 'APRES-MIDI' } */}
+                                      <Link to={`/Reservation/${RoomId}/matin`} style={{color: "white"}}>MATIN</Link>
+                                    </Button>
+                                  </li>
+                                  <li>
+                                    <Button size="small" style={{margin:'5px', backgroundColor: "green"}} variant="contained">
+                                      {/* {isThisMorning(item.date) ? 'MATIN' : 'APRES-MIDI' } */}
+                                      <Link to={`/Reservation/${RoomId}/aprem`} style={{color: "white"}}>APRÈM</Link>
+                                    </Button>
+                                  </li>
+                                </ul>
+                              )
+                            })
+                          }
+                       
+                          </CardActions>
+                      </Card>
+                    );
+                  }
+              })}
+          </ul>
      
 
       <AppMain />

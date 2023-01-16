@@ -67,7 +67,7 @@ export function MediaCard({index, size, hauter, img, name, description, pegi}) {
       </CardContent>
       <CardActions>
         {/* <Button size="small"><Link to="/Booking">Detail</Link></Button> */}
-        <Button size="small"><Link to={`/Reservation/${index}`}>Reservation</Link></Button>
+        <Button size="small"><Link to={`/Booking/${index}`}>Reservation</Link></Button>
         <img src={pegi} style={{ marginLeft:"190px", width:"45px", height:"auto"}} alt="Logo Pegi 18" />
       </CardActions>
     </Card>
