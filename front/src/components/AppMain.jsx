@@ -6,7 +6,6 @@ const AppMain = () => {
             <section>
                 <div>
                     <h1>Main</h1>
-                    <p>Bonjour</p>
                 </div>
             </section>
         </main>

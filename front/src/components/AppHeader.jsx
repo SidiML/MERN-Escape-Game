@@ -3,7 +3,7 @@ import "../styles/AppHeader.css"
 import logoEscapeGame from "../media/images/Logo_EscapeGame.png"
 
 
-const AppHeader = () => {
+const AppHeader = ({UserName}) => {
     const [userConnect, setUserConnect] = useState(false)
 
     return (
@@ -18,14 +18,17 @@ const AppHeader = () => {
             </section>
             <section>
                 <div className=''>
-                    {userConnect && <p>Bonjour</p>}
+                    {userConnect && <h2>Bonjour {UserName}</h2>}
+                    {/* {UserName !== "" && <h2>Bonjour {UserName}</h2>} */}
                 </div>
             </section>
             <section>
                 <div>
-                    <a href='/Historique' style={{marginRight: '10px', color: 'red'}}>Historique</a>
+                    {userConnect && <a href='/Historique' style={{marginRight: '10px', color: 'red'}}>Historique</a>}
+                    {userConnect == false ? <a href='/Connexion' style={{color:'white'}}>Connexion</a> : <a href='/Connexion' style={{color:'white'}}>Deconnexion</a>}
 
-                    <a href='/Connexion' style={{color:'white'}}>Connexion</a>
+                    {/* {UserName !== "" && <a href='/Historique' style={{marginRight: '10px', color: 'red'}}>Historique</a>}
+                    {UserName ? <a href='/Connexion' style={{color:'white'}}>Connexion</a> : <a href='/Connexion' style={{color:'white'}}>Deconnexion</a>} */}
                 </div>
             </section>
         </header>

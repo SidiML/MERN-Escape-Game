@@ -29,21 +29,18 @@ exports.getRoom = async (requête, réponse) => {
   // console.log("Données Obtenu")
 
   //* Methode Dynamique
-  const userData = requete.params
-  console.log(userData);
-  const RoomExisting = await RoomModel.find({ _id: userData.id })
+  // const userData = requete.params
+  const RoomExisting = await RoomModel.find()
     .then((roomFound) => {
-      réponse
-        .status(200)
-        .json({
+      réponse.json({
+          status: 200,
           message: "recherche -> <Room> Trouvé... !",
           resultat: roomFound,
         });
       console.log(roomFound);
     })
     .catch((error) => {
-      réponse
-        .status(400)
+      réponse.status(400)
         .json({ message: "Not Found -> <Room>  ... !", resultat: error });
       console.log(error);
     });

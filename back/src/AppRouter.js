@@ -43,7 +43,7 @@ function withAuth(requête, réponse, next){
 router.get('/Token/Checked', withAuth, userController.checkToken)
 
 //? Room
-router.get("/Room/:id", roomController.getRoom)
+router.get("/Rooms/", roomController.getRoom)
 router.post("/Room/Add", roomController.createRoom)
 
 //? Date

@@ -1,9 +1,10 @@
 import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
+// import axios from "axios";
 
 // *pages
 import "./styles/App.css";
-import logoPegi18 from "../src/media/images/Logo_Pegi18.jpg"
+// import logoPegi18 from "../src/media/images/Logo_Pegi18.jpg"
 import AppHeader from "./components/AppHeader";
 import AppMain from "./components/AppMain";
 import AppFooter from "./components/AppFooter";
@@ -15,12 +16,12 @@ class App extends Component {
         <AppHeader />
         <ul style={{ marginTop: 20, textAlign: "center"}}>
           <h1>Bienvenue sur le site de résa Escape Room</h1>
-          <MediaCard  size={350}/>
-          <MediaCard size={350}/>
-          <MediaCard size={350}/>
-          <MediaCard size={350}/>
-          <MediaCard size={350}/>
-          <MediaCard size={350}/>
+          <MediaCard index={123} size={350} img={"https://picsum.photos/200/150"} name={"Barak"} description={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem animi eveniet magni ab at. Sit ipsam libero nisi saepe quos dolorem aut ipsum corporis, voluptatibus cupiditate at odit, error in."} pegi={"./src/media/images/Logo_Pegi16.jpg"}/>
+          <MediaCard index={321} size={350} img={"https://picsum.photos/200/103"} name={"42"} description={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem animi eveniet magni ab at. Sit ipsam libero nisi saepe quos dolorem aut ipsum corporis, voluptatibus cupiditate at odit, error in."} pegi={"./src/media/images/Logo_Pegi7.png"}/>
+          <MediaCard index={345} size={350} img={"https://picsum.photos/200/120"} name={"kninink"} description={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem animi eveniet magni ab at. Sit ipsam libero nisi saepe quos dolorem aut ipsum corporis, voluptatibus cupiditate at odit, error in."} pegi={"./src/media/images/Logo_Pegi18.jpg"}/>
+          <MediaCard index={543} size={350} img={"https://picsum.photos/200/123"} name={"Loren"} description={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem animi eveniet magni ab at. Sit ipsam libero nisi saepe quos dolorem aut ipsum corporis, voluptatibus cupiditate at odit, error in."} pegi={"./src/media/images/Logo_Pegi16.jpg"}/>
+          <MediaCard index={567} size={350} img={"https://picsum.photos/200/120"} name={"Matrice"} description={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem animi eveniet magni ab at. Sit ipsam libero nisi saepe quos dolorem aut ipsum corporis, voluptatibus cupiditate at odit, error in."} pegi={"./src/media/images/Logo_Pegi18.jpg"}/>
+          <MediaCard index={765} size={350} img={"https://picsum.photos/200/100"} name={"IMIE"} description={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem animi eveniet magni ab at. Sit ipsam libero nisi saepe quos dolorem aut ipsum corporis, voluptatibus cupiditate at odit, error in."} pegi={"./src/media/images/Logo_Pegi7.png"}/>
         </ul>
         <AppMain />
         <AppFooter />
@@ -36,7 +37,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-export function MediaCard({size}) {
+export function MediaCard({index, size, img, name, description, pegi}) {
+
   return (
     <Card 
     // sx={{ display: 'inline-block', maxWidth: 345 }}
@@ -46,26 +48,27 @@ export function MediaCard({size}) {
       flexDirection: "column",
       // alignItems: "center",
     }}
+    key={index}
     >
       <CardMedia
         sx={{ height: 140 }}
-        image="https://picsum.photos/200/100"
-        // image="/static/images/cards/contemplative-reptile.jpg"
+        image={img}
         title="green iguana"
       />
-      <CardContent sx={{ textAlign: "left" }}>
+      <CardContent sx={{ textAlign: "left" }} >
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+        {name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          {description}
+          {/* Lizards are a widespread group of squamate reptiles, with over 6,000
+          species, ranging across all continents except Antarctica */}
         </Typography>
       </CardContent>
       <CardActions>
         {/* <Button size="small"><Link to="/Booking">Detail</Link></Button> */}
         <Button size="small"><Link to="/Reservation">Reservation</Link></Button>
-        <img src={logoPegi18} style={{ marginLeft:"190px", width:"45px", height:"auto"}} alt="Logo Pegi 18" />
+        <img src={pegi} style={{ marginLeft:"190px", width:"45px", height:"auto"}} alt="Logo Pegi 18" />
       </CardActions>
     </Card>
   );
