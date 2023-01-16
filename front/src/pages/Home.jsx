@@ -36,8 +36,8 @@ function Home () {
                     return <MediaCard index={i._id} size={350} hauter={140} img={i.img} name={i.name} description={i.description} pegi={`./src/media/images/Logo_Pegi${i.age}.${i.age === 7 ? "png" : "jpg"}`}/>
                 })}
             </ul>
-            <AppMain/>
-            <AppFooter/>
+            <AppMain />
+            <AppFooter />
         </section>
     );
 }

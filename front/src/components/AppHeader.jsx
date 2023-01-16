@@ -1,11 +1,23 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import "../styles/AppHeader.css"
 import logoEscapeGame from "../media/images/Logo_EscapeGame.png"
 
 
 const AppHeader = () => {
-    const [userConnect, setUserConnect] = useState(false)
-
+    const [user, setUser] = useState(false)
+    console.log("init", user)
+    
+    useEffect(()=>{
+        setUser(JSON.parse(localStorage.getItem("user")))
+        
+    }, [])
+    
+    const Logout = ()=>{
+        localStorage.removeItem("user")
+        localStorage.removeItem("token")
+        setUser(false)
+    }
+    
     return (
         <header>
             <section>
@@ -18,17 +30,13 @@ const AppHeader = () => {
             </section>
             <section>
                 <div className=''>
-                    {userConnect && <h2>Bonjour {UserName}</h2>}
-                    {/* {UserName !== "" && <h2>Bonjour {UserName}</h2>} */}
+                    { user && <h2>Bonjour {user.nom}</h2>}
                 </div>
             </section>
             <section>
                 <div>
-                    {userConnect && <a href='/Historique' style={{marginRight: '10px', color: 'red'}}>Historique</a>}
-                    {userConnect == false ? <a href='/Connexion' style={{color:'white'}}>Connexion</a> : <a href='/Connexion' style={{color:'white'}}>Deconnexion</a>}
-
-                    {/* {UserName !== "" && <a href='/Historique' style={{marginRight: '10px', color: 'red'}}>Historique</a>}
-                    {UserName ? <a href='/Connexion' style={{color:'white'}}>Connexion</a> : <a href='/Connexion' style={{color:'white'}}>Deconnexion</a>} */}
+                    {user && <a href='/Historique' style={{marginRight: '10px', color: 'red'}}>Historique</a>}
+                    {user === true || user !== null ? <a href='/Connexion' style={{color:'white'}} onClick={Logout}>Deconnexion</a> : <a href='/Connexion' style={{color:'white'}}>Connexion</a>}
                 </div>
             </section>
         </header>

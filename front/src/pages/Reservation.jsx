@@ -15,8 +15,8 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
 import Typography from '@mui/material/Typography';
+
 
 function Reservation() {
 
@@ -73,18 +73,19 @@ function Reservation() {
                           </CardMedia>
                           <CardContent sx={{ textAlign: "left" }} >
                             <Typography gutterBottom variant="h5" component="div">
-                            {i.name}
+                              {i.name}
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
                               {i.description}
-                              {/* Lizards are a widespread group of squamate reptiles, with over 6,000
-                              species, ranging across all continents except Antarctica */}
                             </Typography>
                             <Typography variant="h6" color="text.secondary" style={{marginTop:'18px', marginBottom:'10px'}}>
-                              Disponibilité
+                              <b>Disponibilité</b>
                             </Typography>
                           </CardContent>
                           <CardActions>
+                            <Typography variant="h3" color="initial" style={{marginTop: "75px", fontSize: "10px"}}>
+                              <Button size="small"><Link to={`/Home`}>Retour</Link></Button>
+                            </Typography>
                             {
                               Days.map(i => {
                                 return (

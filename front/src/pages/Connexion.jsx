@@ -49,6 +49,7 @@ function SignIn() {
           console.log(réponse.data.user)
           if(réponse.status === 200){
             localStorage.setItem("token", réponse.data.token)
+            localStorage.setItem("user", JSON.stringify(réponse.data.user))
             setUser(réponse.data.user)
             setLogged(true)
             setRedirect(true)
