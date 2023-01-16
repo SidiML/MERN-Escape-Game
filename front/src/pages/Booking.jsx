@@ -132,10 +132,10 @@ function Booking () {
     <section>
       <AppHeader />
 
-      {/* <Booking1/> */}
-      <ul>
+      <Booking1/>
+      {/* <ul>
          <MediaCard size={"1400px"} />
-      </ul>
+      </ul> */}
      
 
       <AppMain />
