@@ -16,12 +16,12 @@ class App extends Component {
         <AppHeader />
         <ul style={{ marginTop: 20, textAlign: "center"}}>
           <h1>Bienvenue sur le site de résa Escape Room</h1>
-          <MediaCard index={123} size={350} img={"https://picsum.photos/200/150"} name={"Barak"} description={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem animi eveniet magni ab at. Sit ipsam libero nisi saepe quos dolorem aut ipsum corporis, voluptatibus cupiditate at odit, error in."} pegi={"./src/media/images/Logo_Pegi16.jpg"}/>
-          <MediaCard index={321} size={350} img={"https://picsum.photos/200/103"} name={"42"} description={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem animi eveniet magni ab at. Sit ipsam libero nisi saepe quos dolorem aut ipsum corporis, voluptatibus cupiditate at odit, error in."} pegi={"./src/media/images/Logo_Pegi7.png"}/>
-          <MediaCard index={345} size={350} img={"https://picsum.photos/200/120"} name={"kninink"} description={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem animi eveniet magni ab at. Sit ipsam libero nisi saepe quos dolorem aut ipsum corporis, voluptatibus cupiditate at odit, error in."} pegi={"./src/media/images/Logo_Pegi18.jpg"}/>
-          <MediaCard index={543} size={350} img={"https://picsum.photos/200/123"} name={"Loren"} description={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem animi eveniet magni ab at. Sit ipsam libero nisi saepe quos dolorem aut ipsum corporis, voluptatibus cupiditate at odit, error in."} pegi={"./src/media/images/Logo_Pegi16.jpg"}/>
-          <MediaCard index={567} size={350} img={"https://picsum.photos/200/120"} name={"Matrice"} description={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem animi eveniet magni ab at. Sit ipsam libero nisi saepe quos dolorem aut ipsum corporis, voluptatibus cupiditate at odit, error in."} pegi={"./src/media/images/Logo_Pegi18.jpg"}/>
-          <MediaCard index={765} size={350} img={"https://picsum.photos/200/100"} name={"IMIE"} description={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem animi eveniet magni ab at. Sit ipsam libero nisi saepe quos dolorem aut ipsum corporis, voluptatibus cupiditate at odit, error in."} pegi={"./src/media/images/Logo_Pegi7.png"}/>
+          <MediaCard index={123} size={350} hauter={140} img={"https://picsum.photos/200/150"} name={"Barak"} description={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem animi eveniet magni ab at. Sit ipsam libero nisi saepe quos dolorem aut ipsum corporis, voluptatibus cupiditate at odit, error in."} pegi={"./src/media/images/Logo_Pegi16.jpg"}/>
+          <MediaCard index={321} size={350} hauter={140} img={"https://picsum.photos/200/103"} name={"42"} description={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem animi eveniet magni ab at. Sit ipsam libero nisi saepe quos dolorem aut ipsum corporis, voluptatibus cupiditate at odit, error in."} pegi={"./src/media/images/Logo_Pegi7.png"}/>
+          <MediaCard index={345} size={350} hauter={140} img={"https://picsum.photos/200/120"} name={"kninink"} description={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem animi eveniet magni ab at. Sit ipsam libero nisi saepe quos dolorem aut ipsum corporis, voluptatibus cupiditate at odit, error in."} pegi={"./src/media/images/Logo_Pegi18.jpg"}/>
+          <MediaCard index={543} size={350} hauter={140} img={"https://picsum.photos/200/123"} name={"Loren"} description={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem animi eveniet magni ab at. Sit ipsam libero nisi saepe quos dolorem aut ipsum corporis, voluptatibus cupiditate at odit, error in."} pegi={"./src/media/images/Logo_Pegi16.jpg"}/>
+          <MediaCard index={567} size={350} hauter={140} img={"https://picsum.photos/200/120"} name={"Matrice"} description={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem animi eveniet magni ab at. Sit ipsam libero nisi saepe quos dolorem aut ipsum corporis, voluptatibus cupiditate at odit, error in."} pegi={"./src/media/images/Logo_Pegi18.jpg"}/>
+          <MediaCard index={765} size={350} hauter={140} img={"https://picsum.photos/200/100"} name={"IMIE"} description={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem animi eveniet magni ab at. Sit ipsam libero nisi saepe quos dolorem aut ipsum corporis, voluptatibus cupiditate at odit, error in."} pegi={"./src/media/images/Logo_Pegi7.png"}/>
         </ul>
         <AppMain />
         <AppFooter />
@@ -37,7 +37,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-export function MediaCard({index, size, img, name, description, pegi}) {
+export function MediaCard({index, size, hauter, img, name, description, pegi}) {
 
   return (
     <Card 
@@ -51,7 +51,7 @@ export function MediaCard({index, size, img, name, description, pegi}) {
     key={index}
     >
       <CardMedia
-        sx={{ height: 140 }}
+        sx={{ height: hauter }}
         image={img}
         title="green iguana"
       />
@@ -67,7 +67,7 @@ export function MediaCard({index, size, img, name, description, pegi}) {
       </CardContent>
       <CardActions>
         {/* <Button size="small"><Link to="/Booking">Detail</Link></Button> */}
-        <Button size="small"><Link to="/Reservation">Reservation</Link></Button>
+        <Button size="small"><Link to={`/Reservation/${index}`}>Reservation</Link></Button>
         <img src={pegi} style={{ marginLeft:"190px", width:"45px", height:"auto"}} alt="Logo Pegi 18" />
       </CardActions>
     </Card>

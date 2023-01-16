@@ -2,8 +2,9 @@ const mongoose = require('mongoose')
 
 const DateSchema = new mongoose.Schema({
     nameRoom: String,
-    date: Date,
-    isFree: String
+    date: String,
+    isFree: Boolean,
+    dateDeCreation: Date
 
 }, {collection: "dates"}) //, {versionKey: true})
 

@@ -24,7 +24,7 @@ root.render(
         <Route path="/Connexion" element={<Connexion />} />
         <Route path="/Inscription" element={<Inscription />} />
         <Route path="/Home" element={<Home />} />
-        <Route path="/Reservation" element={<Reservation />} />
+        <Route path="/Reservation/:RoomId" element={<Reservation />} />
         <Route path="/Booking" element={<Booking />} />
         <Route path="/Historique" element={<Historique />} />
         <Route path="/ResetPassword" element={<ResetPassword />} />

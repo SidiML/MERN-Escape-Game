@@ -6,7 +6,7 @@ export default function UserProvider(props) {
 
     const [user, setUser] = useState({
         isLogged:false,
-        infos:null
+        infos: null
     })
 
   return (

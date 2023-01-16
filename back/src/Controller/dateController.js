@@ -23,7 +23,7 @@ exports.createDate = async (requête, réponse) => {
     // réponse.send(userData); console.log(userData)
 }
 
-exports.getDate = async (requête, réponse) => {
+exports.getDates = async (requête, réponse) => {
     //* Methode Statique
     // const Dates = await DateModel.find()
     // réponse.send(Dates); console.log("Dates", Dates)
@@ -31,7 +31,7 @@ exports.getDate = async (requête, réponse) => {
 
     //* Methode Dynamique
     const userData = requête.params
-    const DateExisting = await DateModel.find()
+    const DatesExisting = await DateModel.find()
         .then((data)=>{
             réponse.status(200).json({ message: "Recherche -> <Dates> Trouvé... !", resultat: data })
             console.log(data)

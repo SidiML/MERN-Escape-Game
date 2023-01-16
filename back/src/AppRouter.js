@@ -47,7 +47,7 @@ router.get("/Rooms/", roomController.getRoom)
 router.post("/Room/Add", roomController.createRoom)
 
 //? Date
-router.get("/Date", dateController.getDate)
+router.get("/Dates", dateController.getDates)
 router.post("/Date/Add", dateController.createDate)
 
 
