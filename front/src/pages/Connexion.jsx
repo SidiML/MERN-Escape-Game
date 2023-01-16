@@ -25,43 +25,8 @@ import AppFooter from "../components/AppFooter";
 const theme = createTheme();
 
 
-function SignIn({handleSubmit, handleEmail, handlePassword}) {
+function SignIn() {
   
-  return (
-    <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box sx={{ marginTop: 8, display: "flex", flexDirection: "column", alignItems: "center" }} >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">Connexion</Typography>
-
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }} >
-            <TextField margin="normal" id="email" name="email" label="Email Address" autoComplete="email" fullWidth required autoFocus
-              onChange={e => handleEmail(e.target.value)}
-            />
-            <TextField type="password" margin="normal" id="password" name="password" label="Password" autoComplete="current-password" sx={{ width: '100%' }}
-              onChange={e => handlePassword(e.target.value)}
-            />
-            {/* <FormControlLabel control={<Checkbox value="remember" color="primary" />} label="Remember me"/> */}
-            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} > CONNEXION </Button>
-
-            <Grid container>
-              <Grid item xs>
-                <Link href="/ResetPassword" variant="body2">Mot de passe oublié? </Link> </Grid>
-              <Grid item>
-                <Link href="/Inscription" variant="body2">{"Pas de compte? Inscrivez-vous"}</Link></Grid>
-            </Grid>
-          </Box>
-        </Box>
-      </Container>
-    </ThemeProvider>
-  );
-}
-
-function Connexion() {
-
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
@@ -97,13 +62,49 @@ function Connexion() {
 
   // console.log(logged, user);
 
+  return (
+    <ThemeProvider theme={theme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box sx={{ marginTop: 8, display: "flex", flexDirection: "column", alignItems: "center" }} >
+          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">Connexion</Typography>
+
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }} >
+            <TextField margin="normal" id="email" name="email" label="Email Address" autoComplete="email" fullWidth required autoFocus
+              onChange={e => setEmail(e.target.value)}
+            />
+            <TextField type="password" margin="normal" id="password" name="password" label="Password" autoComplete="current-password" sx={{ width: '100%' }}
+              onChange={e => setPassword(e.target.value)}
+            />
+            {/* <FormControlLabel control={<Checkbox value="remember" color="primary" />} label="Remember me"/> */}
+            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} > CONNEXION </Button>
+
+            <Grid container>
+              <Grid item xs>
+                <Link href="/ResetPassword" variant="body2">Mot de passe oublié? </Link> </Grid>
+              <Grid item>
+                <Link href="/Inscription" variant="body2">{"Pas de compte? Inscrivez-vous"}</Link></Grid>
+            </Grid>
+          </Box>
+        </Box>
+      </Container>
+    </ThemeProvider>
+  );
+}
+
+function Connexion() {
+
 
   return (
     <section>
-      <AppHeader UserName={user.nom}
+      <AppHeader //UserName={user.nom}
       />
       
-      <SignIn handleSubmit={handleSubmit} handleEmail={setEmail} handlePassword={setPassword} />
+      <SignIn //handleSubmit={handleSubmit} handleEmail={setEmail} handlePassword={setPassword}
+      />
 
       <AppMain />
       <AppFooter />

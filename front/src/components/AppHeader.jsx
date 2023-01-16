@@ -3,7 +3,7 @@ import "../styles/AppHeader.css"
 import logoEscapeGame from "../media/images/Logo_EscapeGame.png"
 
 
-const AppHeader = ({UserName}) => {
+const AppHeader = () => {
     const [userConnect, setUserConnect] = useState(false)
 
     return (
