@@ -5,7 +5,7 @@ import logoEscapeGame from "../media/images/Logo_EscapeGame.png"
 
 const AppHeader = () => {
     const [user, setUser] = useState(false)
-    console.log("init", user)
+    
     
     useEffect(()=>{
         setUser(JSON.parse(localStorage.getItem("user")))
@@ -22,7 +22,7 @@ const AppHeader = () => {
         <header>
             <section>
                 <div className='AppLogo'>
-                   <a href='/'>
+                   <a href='/Home'>
                     <img src={logoEscapeGame} style={{width:"100px"}} alt="logo EscapeGame"/>
                     </a> 
                 </div>
